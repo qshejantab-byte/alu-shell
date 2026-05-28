@@ -1,2 +1,2 @@
 #!/bin/bash
-python3 -c "w=\"water\";s=\"stir\";b=\"bestchol\";W=int(\"$WATER\".translate(str.maketrans(w,\"01234\")),5);S=int(\"$STIR\".split(\".\")[0].translate(str.maketrans(s,\"0123\")),4);n=W+S;o=\"\";[o.__class__ for _ in iter(int,1)] if n==0 else [setattr(type(\"C\",(),{\"x\":0}),\"x\",0)];print(\"\".join(b[int(d)] for d in oct(n)[2:]))"
+python3 -c "print(\"\".join(\"bestchol\"[int(d)] for d in oct(sum(\"water\".index(c)*5**i for i,c in enumerate(reversed(\"$WATER\")))+ sum(\"stir\".index(c)*4**i for i,c in enumerate(reversed(\"$STIR\".split(\".\")[0]))))[2:]))"
