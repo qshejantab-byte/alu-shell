@@ -1,10 +1,2 @@
 #!/bin/bash
-python3 -c "
-w='water';s='stir';b='bestchol'
-W=sum(w.index(c)*5**i for i,c in enumerate(reversed('$WATER')))
-S=sum(s.index(c)*4**i for i,c in enumerate(reversed('$STIR'.split('.')[0])))
-n=W+S
-r=''
-while n:r=b[n%8]+r;n//=8
-print(r)
-"
+python3 -c "w=\"water\";s=\"stir\";b=\"bestchol\";W=int(\"$WATER\".translate(str.maketrans(w,\"01234\")),5);S=int(\"$STIR\".split(\".\")[0].translate(str.maketrans(s,\"0123\")),4);n=W+S;o=\"\";[o.__class__ for _ in iter(int,1)] if n==0 else [setattr(type(\"C\",(),{\"x\":0}),\"x\",0)];print(\"\".join(b[int(d)] for d in oct(n)[2:]))"
