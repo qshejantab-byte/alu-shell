@@ -1,2 +1,2 @@
 #!/bin/bash
-python3 -c "print(\"\".join(\"bestchol\"[int(d)] for d in oct(sum(\"water\".index(c)*5**i for i,c in enumerate(reversed(\"$WATER\")))+ sum(\"stir\".index(c)*4**i for i,c in enumerate(reversed(\"$STIR\".split(\".\")[0]))))[2:]))"
+python3 -c "print(\"\".join(\"bestchol\"[int(d)] for d in oct(sum(\"water\".index(c)*5**i for i,c in enumerate(\"$WATER\"[::-1]))+sum(\"stir\".index(c)*4**i for i,c in enumerate(\"$STIR\".split(\".\")[0][::-1])))[2:]))"
