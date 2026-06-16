@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# This script displays the content of the current directory in alphabetical order
+for file in $(ls | sort)
+do
+	echo "$file"
+done
